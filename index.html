@@ -4,29 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>WargaBersih - RT/RW Digital</title>
-  <meta name="description" content="Platform digital kolaborasi warga–RT/RW untuk pelaporan sampah, jadwal angkut, notifikasi, dan dashboard tindak lanjut." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Platform kolaborasi warga dan pengurus RT/RW untuk pelaporan sampah, jadwal angkut, notifikasi, dan dashboard tindak lanjut." />
+  <meta property="og:title" content="WargaBersih - RT/RW Digital" />
+  <meta property="og:description" content="Satu dashboard untuk laporan warga, koordinasi petugas, dan jadwal kebersihan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wargabersih.id/" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="WargaBersih - RT/RW Digital" />
+  <meta name="twitter:description" content="Laporkan, tindak lanjuti, dan pantau kebersihan lingkungan bersama WargaBersih." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20251109" />
 </head>
 <body>
-  <!-- ================= HEADER ================= -->
-  <header aria-label="Navigasi utama">
-    <div class="container wrap">
-      <h1><span class="text-green">Warga</span><span class="text-yellow">Bersih</span></h1>
+  <a href="#home" class="skip-link">Lewati ke konten utama</a>
 
+  <header aria-label="Navigasi utama">
+    <div class="container header__inner">
+      <a href="#home" class="brand">
+        <span class="text-green">Warga</span><span class="text-yellow">Bersih</span>
+      </a>
       <nav aria-label="Tautan halaman">
         <div class="nav-links" id="navLinks">
-          <a href="#fitur" class="btn-login">Fitur</a>
-          <a href="#cara-kerja" class="btn-login">Cara Kerja</a>
-          <a href="#demo" class="btn-login">Demo</a>
-          <a href="#faq" class="btn-login">FAQ</a>
-          <a href="#" class="btn-login">Login</a>
-          <a href="#" class="btn-register">Registrasi</a>
+          <a href="#fitur">Fitur</a>
+          <a href="#cara-kerja">Cara Kerja</a>
+          <a href="#demo">Demo</a>
+          <a href="#team">Tim</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn-login" href="#home">Login</a>
+          <a class="btn-register" href="#demo">Registrasi</a>
         </div>
-        
-        <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <button id="themeToggle" class="theme-toggle" aria-label="Ubah tema" aria-pressed="false">
+          <span class="theme-toggle__icon" aria-hidden="true">&#9789;</span>
+          <span>Mode Gelap</span>
+        </button>
+        <button class="hamburger" aria-label="Menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">
           <span class="line"></span>
           <span class="line"></span>
           <span class="line"></span>
@@ -35,165 +50,268 @@
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
   <section class="hero" id="home">
-    <div class="container grid">
-      <div>
-        <span class="badge" aria-hidden="true">Baru: Notifikasi WhatsApp untuk RT/RW</span>
-        <h2>🌿 Bersama Wujudkan Lingkungan Bersih & Nyaman</h2>
-        <p><b>WargaBersih</b> adalah platform digital yang menghubungkan warga dan pengurus RT/RW untuk menjaga kebersihan lingkungan secara cepat, transparan, dan terorganisir.</p>
-        <div class="hero-cta">
-          <a class="cta" href="#demo">Mulai Sekarang</a>
-          <a class="cta-outline" href="#about">Pelajari Lebih Lanjut</a>
+    <div class="container hero__layout">
+      <div class="hero__content">
+        <p class="hero__badge">Satu dashboard warga & pengurus</p>
+        <h2>Kolaborasi lebih cepat, tindak lanjut lebih transparan.</h2>
+        <p class="hero__desc">
+          WargaBersih menyederhanakan pelaporan kebersihan, koordinasi petugas, dan komunikasi RT/RW. Semua pihak melihat progres yang sama, kapan pun.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="#demo">Coba Demo</a>
+          <a class="btn btn-ghost" href="#about">Pelajari Solusi</a>
         </div>
-        <small>Gratis digunakan. Tersedia untuk warga dan pengurus RT/RW di seluruh Indonesia.</small>
+        <ul class="hero__stats" aria-label="Statistik singkat">
+          <li><strong>120+</strong><span>RT/RW aktif</span></li>
+          <li><strong>9.3/10</strong><span>Skor kepuasan</span></li>
+          <li><strong>&lt; 2 jam</strong><span>Respons laporan</span></li>
+        </ul>
       </div>
-      <div class="mock" role="img" aria-label="Pratinjau dashboard WargaBersih">
-        <div class="bar"></div>
-        <div class="card">
-          <b>📍 Laporan Masuk #WB-2391</b>
-          <p style="margin:6px 0 0;color:var(--muted);font-size:14px">Tumpukan sampah di Jl. Anggrek 2 — Foto & lokasi terlampir.</p>
+      <div class="hero__visual">
+        <div class="hero-card glass-card">
+          <p class="eyebrow">Laporan terbaru</p>
+          <h3>#WB-2391</h3>
+          <p>Tumpukan sampah di Jl. Anggrek 2. Foto & koordinat sudah diterima.</p>
+          <div class="status-chip status-progress">Dalam penanganan</div>
         </div>
-        <div class="card">
-          <b>🗓️ Jadwal Pengangkutan</b>
-          <ul style="margin:6px 0 0 18px;font-size:14px;color:var(--muted)">
-            <li>Senin & Kamis — RW 01–03</li>
-            <li>Selasa & Jumat — RW 04–06</li>
+        <div class="hero-card glass-card">
+          <p class="eyebrow">Ringkasan Wilayah</p>
+          <ul>
+            <li><span>Petugas aktif</span><strong>28 orang</strong></li>
+            <li><span>Laporan selesai</span><strong>94%</strong></li>
+            <li><span>Notifikasi terkirim</span><strong>312x</strong></li>
           </ul>
         </div>
-        <div class="card">
-          <b>🔔 Notifikasi</b>
-          <p style="margin:6px 0 0;color:var(--muted);font-size:14px">RT 04 menandai laporan #WB-2391: <i>Dalam Penanganan</i></p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section id="about">
+  <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">Mengapa <span class="text-green">Warga</span><span class="text-yellow">Bersih</span> Diciptakan?</h2>
-      <p class="section-sub">Koordinasi warga–pengurus sering macet: informasi jadwal tak merata, laporan terlambat ditindak. <b>WargaBersih</b> menyatukan semuanya dalam satu sistem.</p>
-
-      <div id="fitur" class="features" aria-label="Daftar fitur"></div>
-
-      <div class="stats" style="margin-top:16px" aria-label="Statistik ringkas">
-        <div class="stat"><b>120+</b><span style="display:block;margin-top:4px;font-size:14px">RT/RW terdaftar</span></div>
-        <div class="stat"><b>9.3/10</b><span style="display:block;margin-top:4px;font-size:14px">Kepuasan warga</span></div>
-        <div class="stat"><b>−47%</b><span style="display:block;margin-top:4px;font-size:14px">Waktu penyelesaian</span></div>
-        <div class="stat"><b>24/7</b><span style="display:block;margin-top:4px;font-size:14px">Dukungan komunitas</span></div>
+      <div class="section-head">
+        <p class="eyebrow">Kenapa WargaBersih</p>
+        <h2>Semua koordinasi kebersihan dalam satu alur terpadu.</h2>
+        <p>
+          Jadwal angkut, laporan warga, dan tindak lanjut petugas sering terpencar. WargaBersih menyelaraskan semuanya sehingga keputusan bisa diambil lebih cepat.
+        </p>
+      </div>
+      <div class="feature-grid" id="fitur" aria-live="polite">
+        <article class="feature-card">
+          <span class="pill-icon" aria-hidden="true">...</span>
+          <h3>Memuat data</h3>
+          <p>Sedang mengambil daftar fitur terbaik kami.</p>
+        </article>
+      </div>
+      <div class="meta-grid">
+        <article class="stat-card">
+          <p class="eyebrow">Tiket realtime</p>
+          <h3>Visibilitas end-to-end</h3>
+          <p>Tiap laporan langsung diberi status dan timeline otomatis.</p>
+        </article>
+        <article class="stat-card">
+          <p class="eyebrow">Koordinasi lintas kanal</p>
+          <h3>Notifikasi multi-channel</h3>
+          <p>Email, WhatsApp, dan push notification berjalan bersamaan.</p>
+        </article>
+        <article class="stat-card">
+          <p class="eyebrow">Insight kebersihan</p>
+          <h3>Analitik siap pakai</h3>
+          <p>Tahu wilayah paling rawan dan waktu angkut paling efektif.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= HOW IT WORKS ================= -->
-  <section id="cara-kerja">
+  <section id="cara-kerja" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Cara Kerja</h2>
-      <p class="section-sub">Tiga langkah sederhana untuk lingkungan yang lebih bersih.</p>
-      <div class="steps">
-        <div class="step"><div class="step-num">1</div><h3>Laporkan</h3><p>Warga kirim laporan dengan foto dan lokasi.</p></div>
-        <div class="step"><div class="step-num">2</div><h3>Tindaklanjuti</h3><p>RT/RW mengatur petugas, update status, dan SLA.</p></div>
-        <div class="step"><div class="step-num">3</div><h3>Selesai</h3><p>Warga dikabari; data masuk analitik kebersihan.</p></div>
+      <div class="section-head">
+        <p class="eyebrow">Cara Kerja</p>
+        <h2>Langkah sederhana untuk warga dan pengurus.</h2>
+        <p>Semua pihak berada di halaman yang sama karena progres dapat dipantau langsung.</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-num">01</span>
+          <h3>Warga kirim laporan</h3>
+          <p>Lampirkan foto, lokasi, dan kategori. Sistem memvalidasi otomatis.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">02</span>
+          <h3>RT/RW menetapkan petugas</h3>
+          <p>Petugas menerima notifikasi, checklist, dan estimasi waktu selesai.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">03</span>
+          <h3>Progres dipantau bersama</h3>
+          <p>Status diperbarui real-time sampai laporan dinyatakan selesai.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= DEMO: FORM & JADWAL ================= -->
-  <section id="demo">
+  <section id="demo" class="section">
     <div class="container">
-      <h2 class="section-title">Coba Demo</h2>
-      <p class="section-sub">Form laporan dummy & kartu jadwal (tanpa backend).</p>
-      <div class="cols">
-        <div class="card" aria-label="Form laporan contoh">
-          <h3>🧾 Form Laporan (Demo)</h3>
-          <label for="lokasi">Lokasi / Alamat</label>
-          <input id="lokasi" placeholder="Contoh: Jl. Anggrek 2 No. 3" />
-          <label for="kategori">Kategori</label>
-          <select id="kategori">
-            <option>Tumpukan sampah</option>
-            <option>Bau menyengat</option>
-            <option>Sampah liar</option>
-          </select>
-          <label for="deskripsi">Deskripsi</label>
-          <textarea id="deskripsi" placeholder="Tuliskan detail kendala…"></textarea>
-          <button class="btn" onclick="alert('Terima kasih! Simulasi laporan terkirim.')">Kirim Laporan (Simulasi)</button>
-        </div>
-        <div class="card" aria-label="Jadwal angkut contoh">
-          <h3>🗓️ Jadwal Pengangkutan</h3>
-          <ul style="margin:0 0 12px 18px">
-            <li>Senin: RW 01–03</li>
-            <li>Selasa: RW 04–06</li>
-            <li>Rabu: RW 07–09</li>
-            <li>Kamis: RW 10–12</li>
-            <li>Jumat: RW 13–15</li>
+      <div class="section-head">
+        <p class="eyebrow">Demo Interaktif</p>
+        <h2>Simulasikan laporan dan jadwal angkut.</h2>
+        <p>Form demo ini hanya contoh, tetapi alurnya sama dengan aplikasi produksi.</p>
+      </div>
+      <div class="demo-grid">
+        <article class="demo-card">
+          <h3>Simulasikan Laporan</h3>
+          <form class="demo-form" aria-label="Form simulasi laporan">
+            <label for="lokasi">Lokasi</label>
+            <input id="lokasi" class="form-control" type="text" placeholder="Contoh: Jl. Melati 5 Blok C" />
+            <label for="kategori">Kategori</label>
+            <select id="kategori" class="form-control">
+              <option value="">Pilih kategori</option>
+              <option>Sampah menumpuk</option>
+              <option>Saluran tersumbat</option>
+              <option>Lampu jalan mati</option>
+            </select>
+            <label for="deskripsi">Deskripsi</label>
+            <textarea id="deskripsi" class="form-control" rows="3" placeholder="Tuliskan detail laporan"></textarea>
+            <button type="button" class="btn btn-primary" onclick="alert('Terima kasih! Simulasi laporan terkirim.')">Kirim laporan</button>
+          </form>
+        </article>
+        <article class="demo-card">
+          <h3>Contoh Jadwal Angkut</h3>
+          <ul class="schedule-list">
+            <li><span>Senin</span><strong>RW 01 - 03</strong></li>
+            <li><span>Selasa</span><strong>RW 04 - 06</strong></li>
+            <li><span>Rabu</span><strong>RW 07 - 09</strong></li>
+            <li><span>Kamis</span><strong>RW 10 - 12</strong></li>
+            <li><span>Jumat</span><strong>RW 13 - 15</strong></li>
           </ul>
-          <button class="btn" onclick="alert('Kalender ditambahkan (simulasi).')">Tambahkan ke Kalender</button>
-        </div>
+          <button class="btn btn-ghost" type="button" onclick="alert('Kalender ditambahkan (simulasi).')">Sinkronkan ke kalender</button>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= PROGRAMS ================= -->
-  <section id="program">
+  <section id="program" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Program RT/RW</h2>
-      <p class="section-sub">Inisiatif yang bisa diaktifkan melalui WargaBersih.</p>
-      <div class="programs">
-        <div class="program"><h3>♻️ Bank Sampah</h3><p>Penukaran sampah terpilah menjadi poin & insentif.</p></div>
-        <div class="program"><h3>🌧️ Bersih Selokan</h3><p>Jadwal gotong royong & pelaporan hambatan.</p></div>
-        <div class="program"><h3>🌱 Kompos Kampung</h3><p>Pelatihan & pemantauan produksi kompos mandiri.</p></div>
+      <div class="section-head">
+        <p class="eyebrow">Program RT/RW</p>
+        <h2>Aktifkan kampanye kebersihan unggulan.</h2>
+        <p>Kami bantu monitor progres setiap program agar warga mudah berpartisipasi.</p>
+      </div>
+      <div class="program-grid" id="programs" aria-live="polite">
+        <article class="program-card">
+          <div class="program-icon" aria-hidden="true">...</div>
+          <div>
+            <h3>Memuat program</h3>
+            <p>Sedang menyiapkan daftar program favorit warga.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= TESTIMONIALS ================= -->
-  <section id="testi">
+  <section id="testi" class="section">
     <div class="container">
-      <h2 class="section-title">Apa Kata Mereka</h2>
-      <div class="testi">
-        <div class="quote"><p>"Sekarang laporan cepat direspon, warga jadi semangat ikut jaga lingkungan."</p><small>— Ibu Ratna, Warga</small></div>
-        <div class="quote"><p>"Dashboard-nya jelas, memudahkan kami mengatur petugas."</p><small>— Pak Dedi, Ketua RT 06</small></div>
-        <div class="quote"><p>"Notifikasi WhatsApp efektif, info jadwal tak lagi miss."</p><small>— Rina, Warga</small></div>
+      <div class="section-head">
+        <p class="eyebrow">Apa Kata Mereka</p>
+        <h2>Testimoni warga dan pengurus.</h2>
+        <p>Kepercayaan tumbuh karena prosesnya transparan.</p>
+      </div>
+      <div class="quote-grid" id="testiList" aria-live="polite">
+        <article class="quote-card">
+          <p>"Memuat testimoni..."</p>
+          <span>Tim WargaBersih</span>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
-  <section id="faq">
+  <section id="team" class="section">
     <div class="container">
-      <h2 class="section-title">Pertanyaan Umum</h2>
-      <details>
-        <summary>Apakah WargaBersih gratis?</summary>
-        <p style="margin-top:8px;color:var(--muted)">Ya, gratis untuk warga dan RT/RW.</p>
-      </details>
-      <details>
-        <summary>Bagaimana cara mendaftar untuk RT/RW?</summary>
-        <p style="margin-top:8px;color:var(--muted)">Ketua atau pengurus dapat membuat akun melalui halaman Registrasi, kemudian menambahkan wilayah RT/RW di dashboard.</p>
-      </details>
+      <div class="section-head">
+        <p class="eyebrow">Tim WargaBersih</p>
+        <h2>Manusia di balik produk ini.</h2>
+        <p>Setiap anggota fokus menjaga pengalaman warga tetap lancar, dari strategi produk hingga dukungan lapangan.</p>
+      </div>
+      <div class="team-grid">
+        <article class="team-card">
+          <span class="team-badge">Project Leader</span>
+          <h3>Muhammad Sulthan Zharfan</h3>
+          <p>Menjaga visi produk, memimpin roadmap, dan memastikan kolaborasi lintas tim berjalan rapih.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-badge">Lead Engineer</span>
+          <h3>Muhammad Raihan Amancha Pratama</h3>
+          <p>Merancang arsitektur teknis, automasi pipeline data, dan kinerja dashboard yang stabil.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-badge">UX Research & Content</span>
+          <h3>Akhmad Rizaldy</h3>
+          <p>Menerjemahkan riset lapangan menjadi alur pelaporan yang ramah warga serta narasi edukatif.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-badge">Front-end Engineer</span>
+          <h3>Nugroho Febrianto</h3>
+          <p>Membangun antarmuka responsif, micro-interaction, dan aksesibilitas di seluruh landing page.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-badge">Community Success</span>
+          <h3>Angelina Simbolon</h3>
+          <p>Mengarahkan onboarding RT/RW, membuat materi panduan, dan menjaga komunikasi komunitas.</p>
+        </article>
+        <article class="team-card">
+          <span class="team-badge">Data & Automation</span>
+          <h3>Yudhistira Indra Prastha</h3>
+          <p>Menyusun insight kebersihan, analitik kebutuhan wilayah, dan otomasi notifikasi multi-channel.</p>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- ================= CTA BAND ================= -->
-  <section aria-label="Ajakan bertindak">
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Pertanyaan yang sering kami terima.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Apakah WargaBersih gratis?</summary>
+          <p>Ya, gratis untuk warga dan pengurus RT/RW. Paket premium tersedia untuk kebutuhan lanjutan.</p>
+        </details>
+        <details>
+          <summary>Bagaimana proses onboarding?</summary>
+          <p>Kami bantu input wilayah, migrasi data jadwal, dan pelatihan penggunaan dashboard.</p>
+        </details>
+        <details>
+          <summary>Apakah bisa terintegrasi WhatsApp?</summary>
+          <p>Bisa. Kami telah menyiapkan template pesan resmi sehingga warga dapat menerima update penting.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Ajakan bergabung" class="section cta-section">
     <div class="container cta-band">
-      <div class="row">
-        <p style="margin:0;font-weight:700">Siap bikin lingkungan lebih bersih? Mulai kolaborasi hari ini.</p>
-        <a href="#demo">Buka Dashboard</a>
+      <div>
+        <p class="eyebrow">Siap berkolaborasi?</p>
+        <h3>Mulai WargaBersih di lingkungan Anda dalam hitungan hari.</h3>
+      </div>
+      <div class="cta-band__actions">
+        <a href="#demo" class="btn btn-primary">Lihat Demo</a>
+        <a href="#kontak" class="btn btn-ghost">Hubungi Kami</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer id="kontak" aria-label="Informasi footer">
-    <div class="container grid">
+    <div class="container footer__grid">
       <div>
-        <h3><span class="text-green">Warga</span><span class="text-yellow">Bersih</span></h3>
-        <p>Platform kolaboratif untuk warga dan pengurus RT/RW dalam menjaga kebersihan lingkungan secara digital. Bersama kita ciptakan lingkungan yang bersih, sehat, dan nyaman 💚</p>
+        <h4><span class="text-green">Warga</span><span class="text-yellow">Bersih</span></h4>
+        <p>Platform kolaboratif untuk warga dan pengurus RT/RW dalam menjaga kebersihan lingkungan secara digital.</p>
       </div>
       <div>
         <h4>Kontak</h4>
-        <p>Email: support@wargabersih.id<br>Telepon: (021) 555-8932<br>Alamat: Jl. Anggrek 2 No. 3, Sinarsari, Dramaga, Kab. Bogor</p>
+        <p>Email: support@wargabersih.id<br />Telepon: (021) 555-8932<br />Alamat: Jl. Anggrek 2 No. 3, Bogor</p>
       </div>
       <div>
         <h4>Tautan</h4>
@@ -201,14 +319,20 @@
       </div>
       <div>
         <h4>Sosial</h4>
-        <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">Twitter</a></p>
+        <p><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a> · <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a> · <a href="https://twitter.com" target="_blank" rel="noreferrer">Twitter</a></p>
       </div>
     </div>
     <div class="foot-bottom container">
-      <p>© 2025 WargaBersih. All rights reserved.</p>
+      <p>&copy; 2025 WargaBersih. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <noscript>
+    <div class="container noscript">
+      JavaScript dinonaktifkan. Konten fitur, program, dan testimoni tidak dapat dimuat otomatis.
+    </div>
+  </noscript>
+
+  <script src="script.js?v=20251109" defer></script>
 </body>
 </html>

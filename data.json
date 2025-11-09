@@ -1,24 +1,55 @@
 {
   "features": [
     {
-      "icon": "🗓️",
+      "icon": "\ud83d\udcc5",
       "title": "Jadwal Pengambilan Sampah",
       "description": "Lihat jadwal pengambilan sampah terbaru agar lingkungan tetap bersih dan teratur."
     },
     {
-      "icon": "📢",
+      "icon": "\ud83d\udce3",
       "title": "Pengumuman RT/RW",
       "description": "Dapatkan update penting seperti kegiatan warga, rapat, dan informasi kebersihan."
     },
     {
-      "icon": "🧾",
+      "icon": "\ud83d\udcdd",
       "title": "Laporan Warga",
-      "description": "Kirim laporan tentang masalah lingkungan seperti lampu jalan rusak atau kebersihan umum."
+      "description": "Kirim laporan tentang masalah lingkungan seperti sampah liar atau kebersihan umum."
     },
     {
-      "icon": "🔔",
+      "icon": "\u26a1",
       "title": "Notifikasi Real-time",
       "description": "Pemberitahuan via aplikasi, email, dan WhatsApp untuk update terkini."
+    }
+  ],
+  "programs": [
+    {
+      "icon": "\u267b",
+      "title": "Bank Sampah",
+      "description": "Penukaran sampah terpilah menjadi poin dan insentif."
+    },
+    {
+      "icon": "\u2692",
+      "title": "Bersih Selokan",
+      "description": "Jadwal gotong royong dan pelaporan hambatan."
+    },
+    {
+      "icon": "\ud83c\udf31",
+      "title": "Kompos Kampung",
+      "description": "Pelatihan dan pemantauan produksi kompos mandiri."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Sekarang laporan cepat direspon, warga jadi semangat ikut jaga lingkungan.",
+      "author": "Ibu Ratna - Warga"
+    },
+    {
+      "text": "Dashboard-nya jelas, memudahkan kami mengatur petugas.",
+      "author": "Pak Dedi - Ketua RT 06"
+    },
+    {
+      "text": "Notifikasi WhatsApp efektif, info jadwal tak lagi miss.",
+      "author": "Rina - Warga"
     }
   ]
 }
